@@ -1,0 +1,11 @@
+curl -i -XPOST -H"Content-Type: application/json" localhost:8083/registration -d'{"name": "Pete"}'
+curl -i localhost:8083/users/<USER-ID>
+
+curl -i localhost:8083/accounts?ownerId=<USER-ID>
+
+curl -i -XPOST -H"Content-Type: application/json" localhost:8083/projects -d'{"name": "Basket Weaving", "accountId": <ACCOUNT-ID>}'
+curl -i localhost:8083/projects?accountId=<ACCOUNT-ID>
+
+curl -i -XPOST -H"Content-Type: application/json" localhost:8081/allocations -d'{"projectId": <PROJECT-ID>, "userId": <USER-ID>, "firstDay": "2015-05-17", "lastDay": "2015-05-18"}'
+curl -i localhost:8081/allocations?projectId=<PROJECT-ID>
+
